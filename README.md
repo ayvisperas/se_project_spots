@@ -6,7 +6,7 @@ An image sharing site.
 
 Spot's profile page of Bessie Coleman.
 Desktop and Mobile view available.
-Buttons for new post and edit profile.
+Includes button to post new photos with caption.
 
 ## Tech Stack
 
