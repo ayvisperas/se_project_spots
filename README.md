@@ -20,4 +20,4 @@ This webpage is deployed to GitHub Pages
 
 - Deployment link:
 
-https://github.com/ayvisperas/se_project_spots.git
+https://ayvisperas.github.io/se_project_spots/
