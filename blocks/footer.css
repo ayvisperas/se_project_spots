@@ -10,11 +10,3 @@
   color: #212121;
   opacity: 70%;
 }
-
-@media screen and (max-width: 627px) {
-  .footer {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-}
