@@ -50,6 +50,8 @@ function getCardElement(data) {
 
   cardNameEl.textContent = data.name;
   cardImageEl.textContent = data.name;
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
 
   return cardElement;
 }
@@ -77,5 +79,5 @@ editFormElement.addEventListener("submit", handleEditFormSubmit);
 
 for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]);
-  cardsList.prepend(cardElement);
+  cardList.prepend(cardElement);
 }
