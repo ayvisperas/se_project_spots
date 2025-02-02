@@ -11,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  position: relative;
 }
 
 .card__title {
@@ -24,6 +26,16 @@
   overflow: hidden;
   max-width: 350px;
   margin: 0;
+  flex-grow: 1;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .card__like-btn {
@@ -37,6 +49,8 @@
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  font-size: 24px;
+  margin-left: auto;
 }
 
 .card__like-btn:hover {

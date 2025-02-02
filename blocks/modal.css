@@ -37,6 +37,7 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+  cursor: pointer;
 }
 
 .modal__close-btn:hover {
@@ -72,6 +73,7 @@
   background-color: #212121;
   border-radius: 8px;
   color: #fcf5e5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
