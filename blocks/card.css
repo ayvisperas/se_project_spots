@@ -9,6 +9,7 @@
   display: block;
   border-radius: 8px;
   margin: 0 0 12px;
+  cursor: pointer;
 }
 
 .card__content {

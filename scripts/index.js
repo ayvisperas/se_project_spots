@@ -76,8 +76,6 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-    cardDeleteBtn.classList.toggle("card__delete-btn-hover");
-
     event.target.closest(".card").remove();
   });
 
@@ -89,14 +87,6 @@ function getCardElement(data) {
   });
 
   return cardElement;
-}
-
-function openModal(modal) {
-  editModal.classList.add("modal_opened");
-}
-
-function closeModal(modal) {
-  editModal.classList.remove("modal_opened");
 }
 
 function openModal(modal) {
@@ -119,9 +109,15 @@ function handleAddCardSubmit(evt) {
 
   const cardNameInput = cardModal.querySelector("#add-card-name-input");
   const cardLinkInput = cardModal.querySelector("#add-card-link-input");
+
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardEl = getCardElement(inputValues);
   cardList.prepend(cardEl);
+}
+
+function renderCard(cardData) {
+  const cardEl = getCardElement(cardData);
+  cardList.append(cardEl);
 }
 
 profileEditButton.addEventListener("click", () => {
