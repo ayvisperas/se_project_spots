@@ -77,12 +77,12 @@
 }
 
 .card__like-btn_liked {
-  background-image: url("../images/like-icon-liked.jpg");
+  background-image: url("../images/heart-filled.png");
   opacity: 1;
 }
 
 .card__like-btn_liked:hover {
-  background-image: url("../images/like-icon-liked-hover.jpg");
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 627px) {
