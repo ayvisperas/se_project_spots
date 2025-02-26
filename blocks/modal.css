@@ -164,13 +164,13 @@
     width: 100%;
   }
 
-  .modal__close-btn_type_preview {
-    top: -45px;
-    right: 0;
-  }
-
   .modal__close-btn {
     top: 15px;
     right: 10px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: -45px;
+    right: 0;
   }
 }
