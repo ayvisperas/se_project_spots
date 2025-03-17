@@ -91,17 +91,16 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const activeModal = document.querySelector(".modal_opened");
+    closeModal(activeModal);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_opened");
-
   document.addEventListener("keydown", handleEscClose);
-
-  if (modal === editModal) {
-    const inputs = editForm.querySelectorAll(".modal__input");
-    inputs.forEach((input) => {
-      hideInputError(editForm, input, validationConfig);
-    });
-  }
 }
 
 function closeModal(modal) {
@@ -116,36 +115,16 @@ function closeModal(modal) {
       input.setCustomValidity("");
       input.classList.remove("modal__input_type_error");
     });
-
-    const errorMessages = editForm.querySelectorAll(".error");
-    errorMessages.forEach((error) => {
-      error.textContent = "";
-    });
-    editForm.reset();
-
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach((modal) => {
-      modal.addEventListener("click", (evt) => {
-        if (evt.target === modal) {
-          closeModal(modal);
-        }
-      });
-    });
-  }
-}
-
-function handleEscClose(evt) {
-  if (evt.key === "Escape") {
-    const openedModal = document.querySelector(".modal_opened");
-    if (openedModal) {
-      closeModal(openedModal);
-    }
   }
 }
 
 const modals = document.querySelectorAll(".modal");
 modals.forEach((modal) => {
-  modal.addEventListener("click", (evt) => {});
+  modal.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+  });
 });
 
 function handleEditFormSubmit(evt) {
@@ -173,6 +152,13 @@ function renderCard(cardData) {
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+
+  resetValidation(
+    editForm,
+    [editModalNameInput, editModalDescriptionInput],
+    validationConfig
+  );
+
   openModal(editModal);
 });
 

@@ -30,12 +30,17 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true;
-    buttonElement.classList.add(config.inactiveButtonClass);
+    disableButton(buttonElement, config);
   } else {
     buttonElement.disabled = false;
     buttonElement.classList.remove(config.inactiveButtonClass);
   }
+};
+
+const resetValidation = (formEl, inputList, config) => {
+  inputList.forEach((inputEl) => {
+    hideInputError(formEl, inputEl, config);
+  });
 };
 
 const disableButton = (buttonElement, config) => {
@@ -46,8 +51,6 @@ const disableButton = (buttonElement, config) => {
 const setEventListeners = (formEl, config) => {
   const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
   const buttonElement = formEl.querySelector(config.submitButtonSelector);
-
-  //toggleBlueButtonState(inputList.buttonElement);
 
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", function () {
@@ -61,7 +64,7 @@ validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__button_disabled",
+  inactiveButtonClass: "modal__submit-btn_disabled",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error_visible",
 };
