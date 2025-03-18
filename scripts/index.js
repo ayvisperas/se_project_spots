@@ -105,17 +105,7 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-
   document.removeEventListener("keydown", handleEscClose);
-
-  if (modal === editModal) {
-    const inputs = editForm.querySelectorAll(".modal__input");
-    inputs.forEach((input) => {
-      input.value = "";
-      input.setCustomValidity("");
-      input.classList.remove("modal__input_type_error");
-    });
-  }
 }
 
 const modals = document.querySelectorAll(".modal");
@@ -182,6 +172,5 @@ editForm.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach((item) => {
-  const cardEl = getCardElement(item);
-  cardList.append(cardEl);
+  renderCard(item);
 });

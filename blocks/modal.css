@@ -142,8 +142,8 @@
   cursor: pointer;
 }
 
-.modal__button_disabled {
-  background-color: #505050;
+.modal__submit-btn_disabled {
+  background-color: lightgrey;
   pointer-events: none;
   opacity: 0.5;
   cursor: default;
